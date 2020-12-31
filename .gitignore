@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+# GitHub and Netlify
+.DS_Store
+out/

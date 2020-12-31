@@ -1,0 +1,56 @@
+/*
+ * Coming Soon
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Open+Sans&display=swap');
+ 
+ #__next {
+     margin: 0;
+     padding: 0;
+ }
+ .coming-soon {
+    background: url(/assets/Holly-Trixie__coming-soon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: calc(100vh - 16px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+ h1, h2 {
+    font-family: 'Amatic SC', cursive;
+
+ }
+ h1 {
+    margin: 3px auto 6px 36px;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 64px;
+    color: rgb(121, 3, 58);
+    /*
+    background: -webkit-linear-gradient( rgb(218, 10, 107), rgb(156, 11, 79));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    */
+    background-color: rgba(255, 255, 255, 0.60);
+    padding: 12px;
+ }
+ h2 {
+    margin: auto auto 3px 36px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 32px;
+    color: rgb(88, 2, 42);
+    background-color: rgba(255, 255, 255, 0.80);
+    padding: 6px 12px;
+ }
+ p {
+    margin: 3px auto 36px 36px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color: rgb(58, 0, 27);
+    background-color: rgba(255, 255, 255, 0.60);
+    padding: 6px 12px;
+ }

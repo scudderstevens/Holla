@@ -1,0 +1,35 @@
+{
+  "name": "holla-tyson",
+  "version": "1.0.0",
+  "description": "Holly N. Tyson",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scudderstevens/holla-tyson.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scudderstevens/holla-tyson/issues"
+  },
+  "homepage": "https://github.com/scudderstevens/holla-tyson#readme",
+  "dependencies": {
+    "date-fns": "^2.16.1",
+    "gray-matter": "^4.0.2",
+    "next": "^10.0.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "remark": "^11.0.2",
+    "remark-html": "^10.0.0"
+  },
+  "devDependencies": {
+    "frontmatter-markdown-loader": "^3.6.2"
+  }
+}
