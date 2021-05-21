@@ -5,9 +5,11 @@ Holly N. Tyson
 
 **Next.js** gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. [website](https://nextjs.org/)
 
-- Static HTML export [website](https://nextjs.org/docs/advanced-features/static-html-export)
+- Static HTML export [docs](https://nextjs.org/docs/advanced-features/static-html-export)
 
-- AMP [website](https://nextjs.org/docs/advanced-features/amp-support/introduction)
+- AMP [docs](https://nextjs.org/docs/advanced-features/amp-support/introduction)
+
+- Netlify CMS [tutorial](https://www.netlifycms.org/docs/nextjs/)
 
 **React** A JavaScript library for building user interfaces. [website](https://reactjs.org/)
 
@@ -18,11 +20,25 @@ Holly N. Tyson
 **date-fns** - It's like *Lodash* for dates. [npm](https://www.npmjs.com/package/date-fns) | [git](https://github.com/date-fns/date-fns#readme)
 
 
+### Theming
+
+- Global Styles [git](https://github.com/scudderstevens/styles)
+
+### Images
+
+- Theme dependancy image files, i.e. icons and logos `/public/assets/`
+
+**Filebase** Web3.0 file storage for theme assests, content images and file storage [website](https://filebase.com/)
+
+- Filebase [docs](https://docs.filebase.com/)
+
+**ImageKit** Image CDN for RAW master images, image transformations, thumbnail storage and requests. [website](https://imagekit.io/)
+
+- ImageKit [docs](https://docs.imagekit.io/)
+
 ## Development Notes
 
-**Netlify CMS** Next.js Tutorial [website](https://www.netlifycms.org/docs/nextjs/)
-
-**Vercel/Next.js** Blog Starter [git](https://github.com/vercel/next.js/tree/canary/examples/blog-starter)
+**Vercel/Next.js** Blog Starter [git](https://github.com/vercel/next.js/tree/canary/examples/
 
 to run locally
  
@@ -34,10 +50,21 @@ $ `npm run dev -- -p 8000`
 
 ## Additional Resources
 
-MDN Accessible Rich Internet Applications (ARIA) [website](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
+**ARIA** (Accessible Rich Internet Applications) *MDN*, [website](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
 
-Blog Schemas for structured data [website](https://schema.org/Blog) | Schema Markup Generator [website](https://technicalseo.com/tools/schema-markup-generator/) | Google's Testing Tool [website](https://search.google.com/test/rich-results) | blog examples [git](https://github.com/philwareham/schema-microdata-examples/blob/master/blog.html)
+**Schemas** for structured blog data [website](https://schema.org/Blog)
 
-Accelerated Mobile Pages (AMP) [website](https://amp.dev/)
+- Schema Markup Generator [website](https://technicalseo.com/tools/schema-markup-generator/)
+- Google's Testing Tool [website](https://search.google.com/test/rich-results)
+- blog example schemas [git](https://github.com/philwareham/schema-microdata-examples/blob/master/blog.html)
 
-Theming [git]()
+**AMP** (Accelerated Mobile Pages) *Google*, [website](https://amp.dev/)
+
+- here [docs](#)
+
+**OpenGraph** *FaceBook*, protocol for creating a rich object in a social graph [website](https://ogp.me/)
+
+- Facebook for Webmasters [docs](https://developers.facebook.com/docs/sharing/webmasters/)
+
+'Holla' of the week
+'Don't Botha' of the week
