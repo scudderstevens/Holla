@@ -33,6 +33,9 @@
     "react-icons": "^4.2.0"
   },
   "devDependencies": {
-    "@sanity/vision": "^2.2.6"
+    "@netlify/plugin-nextjs": "^3.3.1",
+    "next": "^10.2.2",
+    "@sanity/vision": "^2.2.6",
+    "dotenv": "^8.6.0"
   }
 }
