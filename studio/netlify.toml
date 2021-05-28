@@ -1,7 +1,7 @@
 [build]
   base      = "/studio"
   command   = "sanity build"
-  publish   = "/studio/dist/"
+  publish   = "dist"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
