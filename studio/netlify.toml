@@ -1,11 +1,4 @@
-[context.production.environment]
-  NEXT_SERVERLESS = "true"
-  NODE_ENV = "production"
-
 [build]
-  base      = "studio"
-  command   = "npm run build"
-  publish   = "dist"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+  base = "studio"
+  command = "npm run build"
+  publish = "dist"
