@@ -24,6 +24,7 @@
     "@sanity/default-layout": "^2.10.2",
     "@sanity/default-login": "^2.8.0",
     "@sanity/desk-tool": "^2.10.4",
+    "@netlify/plugin-nextjs": "^3.3.1",
     "dotenv": "^8.6.0",
     "prop-types": "^15.7",
     "react": "^17.0",
@@ -31,6 +32,7 @@
     "react-icons": "^4.2.0"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^3.3.1",
     "@sanity/vision": "^2.2.6",
     "dotenv": "^8.6.0"
   }
