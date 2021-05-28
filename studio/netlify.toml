@@ -1,6 +1,6 @@
 [build]
   base      = "/studio"
-  command   = "npm run build"
+  command   = "sanity build"
   publish   = "/studio/dist/"
 
 [[plugins]]
