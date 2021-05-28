@@ -9,7 +9,7 @@
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
-    "build": "cp ./sanity.json ./node_modules/@netlify/plugin-nextjs && sanity build"
+    "build": "cp /opt/build/repo/studio/sanity.json /opt/build/repo/studio/node_modules/@netlify/plugin-nextjs && sanity build"
   },
   "keywords": [
     "sanity"
@@ -33,8 +33,6 @@
     "react-icons": "^4.2.0"
   },
   "devDependencies": {
-    "next": "^10.2.3",
-    "@netlify/plugin-nextjs": "^3.3.1",
     "@sanity/vision": "^2.2.6",
     "dotenv": "^8.6.0"
   }
