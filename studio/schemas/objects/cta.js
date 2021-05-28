@@ -23,7 +23,6 @@ export default {
             to: [ {type: 'route'} ],
             fieldset: 'link'
         },
-        /*
         {
             name: 'path',
             title: 'Path',
@@ -31,7 +30,6 @@ export default {
             description: 'local path without a route: /blog',
             fieldset: 'link'
         },
-        */
         {
             name: 'link',
             title: 'External link',

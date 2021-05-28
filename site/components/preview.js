@@ -12,17 +12,22 @@ export default function PostPreview({
     slug,
     }) {
     return (
-        <div id={`${slug}_preview`} className="post preview">
-            <PreviewCoverImage title={title} src={coverImage} slug={slug} />
-            <h3 className="text-3xl mb-3 leading-snug">
+        <div id={`${slug}_preview`} className="grid-container-col grid-1-3">
+            <PreviewCoverImage title={title} src={"https://ik.imagekit.io/mp2mjn7fgdt/hollatyson/content/" + slug + "/tr:ar-4.854-3,w-750,f-webp/" + coverImage} slug={slug} />
+            <h3>
                 <Link as={`/${slug}`} href="/[slug]">
                     <a className="hover:underline">{title}</a>
                 </Link>
             </h3>
-            <div className="text-lg mb-4">
+            <div>
                 <DateFormatter dateString={dateModified} />
             </div>
-            <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+            <div className="grid-container-col">
+            <p>{excerpt}</p>
+                <Link as={`/${slug}`} href="/[slug]">
+                    <a className="hover:underline">Read More</a>
+                </Link>
+            </div>
         </div>
     )
 }

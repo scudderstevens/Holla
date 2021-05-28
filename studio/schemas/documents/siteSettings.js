@@ -42,9 +42,9 @@ export default {
         // og:locale:alternate, other locales this page is available in.
         // icon type="image/svg+xml"
         // logo type="image/svg+xml"
+        // tag(s) free form, array of strings,
         // manifest
         // theme-color
-
         /*
         // You can add videos to Open Graph tags too
         {

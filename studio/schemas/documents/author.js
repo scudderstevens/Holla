@@ -1,25 +1,56 @@
 import { RiAccountCircleFill } from "react-icons/ri";
+// import {isUniqueAcrossAllDocuments} from '../lib/isUniqueAcrossAllDocuments'
+// https://www.sanity.io/docs/slug-type#isUnique-3dd89e75a768
 
 export default {
     name: 'author',
     title: 'Authors',
     type: 'document',
     icon: RiAccountCircleFill,
+    fieldsets: [
+        {
+            name: 'authorPerson',
+            title: 'name',
+            description: `who is this author?`,
+            options: {
+                collapsible: false,
+                collapsed: false
+            }
+        }
+    ],
     fields: [
         {
-            name: 'name',
-            title: 'Name',
+            name: 'nameFirst',
+            title: 'first',
             type: 'string',
+            fieldset: 'authorPerson',
+            validation: Rule => Rule.error(`You have to define the provider's first name.`).required(),
+        },
+        {
+            name: 'nameMiddle',
+            title: 'middle (optional)',
+            type: 'string',
+            description: `leave off any periods (.)`,
+            fieldset: 'authorPerson',
+        },
+        {
+            name: 'nameLast',
+            title: 'last',
+            type: 'string',
+            fieldset: 'authorPerson',
+            validation: Rule => Rule.error(`You have to define the provider's last name.`).required(),
         },
         {
             name: 'slug',
-            title: 'Slug',
+            title: 'slug',
             type: 'slug',
             description: `A URL friendly string, 95 characters or less.`,
-            //validation: Rule => Rule.required().max(95).error(`You have to define a unique slug shorter than 95 characters.`),
+            validation: Rule => Rule.required().error(`You have to define a unique slug shorter than 95 characters.`),
+            fieldset: 'authorPerson',
             options: {
-                source: doc => doc.name,
-                // maxLength: 95,
+                source: doc => doc.nameMiddle? `${doc.nameFirst}-${doc.nameMiddle}-${doc.nameLast}`:`${doc.nameFirst}-${doc.nameLast}`,
+                maxLength: 95,
+                //isUnique: isUniqueAcrossAllDocuments,
                 slugify: input => input
                     .toLowerCase()
                     .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '')
@@ -29,16 +60,28 @@ export default {
             },
         },
         {
+            name: 'tag',
+            title: 'Tag(s)',
+            description: `free form subject tags. each 'tag' option must be defined first before they can be attached to this node.`,
+            type: 'array',
+            of: [ {
+                type: 'reference',
+                weak: true,
+                to: { type: 'tag'},
+            } ],
+        },
+        // tag(s) free form, array of strings,
+        {
             name: 'descShort',
             title: 'short description',
             type: 'string',
-            description: `Author teaser text`,
+            description: `used as the author's teaser text and as the profile page <html> <header> <title>.`,
         },
         {
             name: 'openGraph',
             title: 'Open Graph',
             type: 'openGraph',
-            description: `author specific open graph meta tags, replaces default values as defined in Site Settings`,
+            description: `author Open Graph meta data; supplements document specific attributes such as Short Description and Tags.`,
         },
         {
             name: 'components',
@@ -73,9 +116,19 @@ export default {
     ],
     preview: {
         select: {
-            title: 'name',
-            subtitle: 'slug.current',
-            //media: 'image'
+            f: 'nameFirst',
+            l: 'nameLast',
+            s: 'slug.current',
+            i: 'openGraph.image',
+        },
+        prepare({ f, l, s, i }) {
+            const title=`${f} ${l}`
+            const subtitle=`${s}`
+            return {
+                media: i,
+                title: title,
+                subtitle: subtitle
+            }
         }
     }
 }

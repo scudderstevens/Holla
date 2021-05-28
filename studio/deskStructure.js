@@ -1,13 +1,10 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { RiEqualizerLine } from "react-icons/ri";
+import {RiEqualizerLine} from "react-icons/ri";
 // Remix Icons https://react-icons.github.io/react-icons/
 
 export default () =>
     S.list()
-        .title('desk')
-        //.items(
-        //    S.documentTypeListItems()
-        //)
+        .title('Desk')
         .items([
             S.listItem()
             .title('Settings')

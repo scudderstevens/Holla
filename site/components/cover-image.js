@@ -3,11 +3,11 @@ export default function CoverImage({ title, src }) {
     <img
       src={src}
       alt={`Cover Image for ${title}`}
+      width="100%"
+      height="auto"
     />
   )
   return (
-    <div className="sm:mx-0">
-      {image}
-    </div>
+    image
   )
 }

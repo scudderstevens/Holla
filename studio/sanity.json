@@ -1,11 +1,11 @@
 {
   "root": true,
   "project": {
-  "name": "Holla Tyson"
+    "name": "Holla Tyson"
   },
   "api": {
-  "projectId": "wnaacdfy",
-  "dataset": "holla"
+    "projectId": "wnaacdfy",
+    "dataset": "holla"
   },
   "plugins": [
     "@sanity/base",

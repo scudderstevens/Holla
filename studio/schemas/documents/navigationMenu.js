@@ -15,5 +15,6 @@ export default {
             type: 'array',
             of: [{ type: 'cta' }]
         }
+        // collection of CTAs, sub-menu
     ]
 }

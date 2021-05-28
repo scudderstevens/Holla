@@ -1,5 +1,7 @@
 import { Component } from "react";
 import { RiGitCommitFill } from "react-icons/ri";
+// import {isUniqueAcrossAllDocuments} from '../lib/isUniqueAcrossAllDocuments'
+// https://www.sanity.io/docs/slug-type#isUnique-3dd89e75a768
 
 /* __experimental_actions: ['update', 'create', 'delete', 'publish'], */
 
@@ -24,17 +26,18 @@ export default {
             name: 'name',
             title: 'Name',
             type: 'string',
-            // validation: Rule => Rule.required().error(`You have to define a name for this node.`),
+            validation: Rule => Rule.required().error(`You have to define a name for this node.`),
         },
         {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
-            // validation: Rule => Rule.required().max(95).error(`You have to define a unique slug for this node, no longer than 95 characters.`).required().max(95),
+            validation: Rule => Rule.required().error(`You have to define a unique slug for this node, no longer than 95 characters.`),
             description: `A URL friendly string, 95 characters or less.`,
             options: {
                 source: doc => doc.name,
-                // maxLength: 95,
+                maxLength: 95,
+                //isUnique: isUniqueAcrossAllDocuments,
                 slugify: input => input
                     .toLowerCase()
                     .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '')
@@ -46,10 +49,10 @@ export default {
         {
             name: 'category',
             type: 'reference',
+            validation: (Rule) => Rule.required(),
             description: `a single 'category' reference`,
             weak: true,
             to: [ { type: 'category' } ],
-            // validation: (Rule) => Rule.required(),
         },
         {
             name: 'tag',
@@ -62,24 +65,25 @@ export default {
                 to: { type: 'tag'},
             } ],
         },
+        // tag(s) free form, array of strings,
         {
             name: 'author',
             type: 'reference',
             weak: true,
             to: [ { type: 'author' } ],
-            // validation: (Rule) => Rule.required(),
+            validation: (Rule) => Rule.required(),
         },
         {
             name: 'descShort',
             title: 'short description',
             type: 'string',
-            description: `Node teaser text`,
+            description: `used as the node's teaser text and as the page <html> <header> <title>.`,
         },
         {
             name: 'openGraph',
             title: 'Open Graph',
             type: 'openGraph',
-            description: `node specific open graph meta tags, replaces default values as defined in Site Settings`,
+            description: `node Open Graph meta data; supplements document specific attributes such as Short Description, Category and Tags.`,
         },
         {
             name: 'components',
@@ -100,12 +104,6 @@ export default {
             type: 'text',
         },
         */
-        // category, single reference type,
-        // tag(s), array of reference type,
-        // tag(s) free form, array of strings,
-        // replace defaults
-        // icon type="image/svg+xml"
-        // logo type="image/svg+xml"
         // manifest
         // theme-color
     ],
@@ -130,16 +128,16 @@ export default {
     preview: {
         select: {
             t: 'name',
-            s: 'descShort',
-            //i: 'openGraph.mainImage.asset.url',
+            s: 'slug.current',
+            i: 'openGraph.image',
         },
-        prepare({ t, s }) {
+        prepare({ t, s, i }) {
             const title=`${t}`
             const subtitle=`${s}`
             return {
-                //imageUrl: i,
+                media: i,
                 title: title,
-                subtitle: subtitle,
+                subtitle: subtitle
             }
         }
     }

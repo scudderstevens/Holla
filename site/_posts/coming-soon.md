@@ -1,14 +1,15 @@
 ---
-title: 'Learn How to Pre-render Pages Using Static Generation with Next.js'
+title: 'Coming Soon'
 excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
-coverImage: '/assets/posts/hello-world/cover.jpg'
+coverImage: 'KKP_08-2020_0072.jpg'
 datePublished: '2020-12-29T10:30:00-05:00Z'
 dateModified: '2020-12-29T10:30:00-05:00Z'
 author:
   name: 'Holly N. Tyson'
-  picture: '/assets/Holly-Trixie__profile.jpg'
+  picture: 'KKP_08-2020_0072.jpg'
+ogDescription: 'A brief description of your coming soon post here. No more than 2 sentences that are to the point and able to attract clicks.'
 ogImage:
-  url: '/assets/posts/hello-world/cover.jpg'
+  url: 'KKP_08-2020_0072.jpg'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

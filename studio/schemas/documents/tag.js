@@ -1,4 +1,6 @@
 import { RiCreativeCommonsNdFill } from "react-icons/ri";
+// import {isUniqueAcrossAllDocuments} from '../lib/isUniqueAcrossAllDocuments'
+// https://www.sanity.io/docs/slug-type#isUnique-3dd89e75a768
 
 export default {
     name: 'tag',
@@ -10,16 +12,18 @@ export default {
             name: 'name',
             title: 'Name',
             type: 'string',
+            validation: Rule => Rule.required().error(`You have to define a name for this tag.`),
         },
         {
             name: 'slug',
             title: 'Slug',
             type: 'slug',
             description: `A URL friendly string, 95 characters or less.`,
-            //validation: Rule => Rule.required().max(95).error(`You have to define a unique slug shorter than 95 characters.`),
+            validation: Rule => Rule.required().error(`You have to define a unique slug shorter than 95 characters.`),
             options: {
                 source: doc => doc.name,
-                // maxLength: 95,
+                maxLength: 95,
+                // isUnique: isUniqueAcrossAllDocuments,
                 slugify: input => input
                     .toLowerCase()
                     .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '')
@@ -28,22 +32,23 @@ export default {
                     .slice(0, 95)
             },
         },
+        // tag icon type="image/svg+xml"
         {
             name: 'descShort',
             title: 'short description',
             type: 'string',
-            description: `Author teaser text`,
+            description: `used as the tag's teaser text and as the landing page <html> <header> <title>.`,
         },
         {
             name: 'openGraph',
             title: 'Open Graph',
             type: 'openGraph',
-            description: `author specific open graph meta tags, replaces default values as defined in Site Settings`,
+            description: `tag Open Graph meta data; supplements document specific attributes such as Short Description.`,
         },
         {
             name: 'components',
             title: 'Component(s)',
-            description: `author profile design components, displayed from top to bottom. drag and drop to change display order.`,
+            description: `tag landing page design components, displayed from top to bottom. drag and drop to change display order.`,
             type: 'array',
             of: [
                 { type: 'hdrBlock' },

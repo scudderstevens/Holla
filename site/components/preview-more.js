@@ -2,7 +2,7 @@ import PostPreview from './preview'
 
 export default function MorePosts({ posts }) {
     return (
-        <div className="post listing">
+        <div className="grid-container-row">
             {posts.map((post) => (
                 <PostPreview
                     key={post.slug}

@@ -10,11 +10,11 @@ export default {
             name: 'title',
             title: 'Title',
             type: 'slug',
-            description: `This will take the node's name and trim it to 60 characters`,
-            //validation: Rule => Rule.max(60).warning('Should be under 60 characters'),
+            description: `This will take the document's name and trim it to 60 characters`,
+            validation: Rule => Rule.warning('Should be under 60 characters'),
             options: {
-                source: doc => doc.name,
-                // maxLength: 60,
+                source: doc => doc.name? `${doc.name}`: doc.nameMiddle? `${doc.nameFirst} ${doc.nameMiddle} ${doc.nameLast}`:`${doc.nameFirst} ${doc.nameLast}`,
+                maxLength: 60,
                 slugify: input => input
                     .slice(0, 60)
             },
@@ -23,11 +23,11 @@ export default {
             name: 'description',
             title: 'Description',
             type: 'slug',
-            description: `This will take the node's short descripton and trim it to 155 characters`,
-            //validation: Rule => Rule.max(155).warning('Should be under 155 characters'),
+            description: `This will take the document's short descripton and trim it to 155 characters`,
+            validation: Rule => Rule.warning('Should be under 155 characters'),
             options: {
                 source: doc => doc.descShort,
-                // maxLength: 155,
+                maxLength: 155,
                 slugify: input => input
                     .slice(0, 155)
             },
@@ -36,7 +36,7 @@ export default {
             name: 'image',
             title: 'Image',
             type: 'mainImage',
-            description: `This node's featured image, recommended 1200x630 or larger (will be auto resized)`,
+            description: `This document's featured image, recommended 1200x630 or larger (will be auto resized)`,
         },
         /*
         // You can add videos to Open Graph tags too
