@@ -19,7 +19,6 @@
   "env": {
     "development": {
       "plugins": [
-        "@netlify/plugin-nextjs",
         "@sanity/vision"
       ]
     }
