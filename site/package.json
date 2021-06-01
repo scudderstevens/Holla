@@ -7,14 +7,18 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build && next export"
+    "export": "next export"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/scudderstevens/holla-tyson.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "holla tyson",
+    "Holly N. Tyson",
+    "blog"
+  ],
+  "author": "Scudder Stevens (Scudder.Stevens@gmail.com)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/scudderstevens/holla-tyson/issues"
@@ -27,7 +31,8 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "remark": "^11.0.2",
-    "remark-html": "^10.0.0"
+    "remark-html": "^10.0.0",
+    "@netlify/plugin-nextjs": "^3.3.1"
   },
   "devDependencies": {
     "frontmatter-markdown-loader": "^3.6.2"

@@ -13,8 +13,7 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/dashboard",
-    "@sanity/desk-tool",
-    "@netlify/plugin-nextjs"
+    "@sanity/desk-tool"
   ],
   "env": {
     "development": {
