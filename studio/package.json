@@ -9,7 +9,7 @@
   "scripts": {
     "start": "sanity start",
     "test": "sanity check",
-    "build": "cp /opt/build/repo/studio/sanity.json /opt/build/repo/studio/node_modules/@netlify/plugin-nextjs && sanity build"
+    "build": "sanity build"
   },
   "keywords": [
     "sanity"

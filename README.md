@@ -3,6 +3,12 @@ Holly N. Tyson
 
 ## Built With
 
+### Back-End
+
+**Sanity.io** is the unified content platform that powers better digital experiences. [website](https://www.sanity.io/)
+
+### Front-End
+
 **Next.js** gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. [website](https://nextjs.org/)
 
 - Static HTML export [docs](https://nextjs.org/docs/advanced-features/static-html-export)
