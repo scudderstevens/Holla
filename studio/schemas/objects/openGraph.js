@@ -10,7 +10,7 @@ export default {
             name: 'title',
             title: 'Title',
             type: 'slug',
-            description: `This will take the document's name and trim it to 60 characters`,
+            description: `This document's name and trim it to 60 characters`,
             validation: Rule => Rule.warning('Should be under 60 characters'),
             options: {
                 source: doc => doc.name? `${doc.name}`: doc.nameMiddle? `${doc.nameFirst} ${doc.nameMiddle} ${doc.nameLast}`:`${doc.nameFirst} ${doc.nameLast}`,
@@ -23,7 +23,7 @@ export default {
             name: 'description',
             title: 'Description',
             type: 'slug',
-            description: `This will take the document's short descripton and trim it to 155 characters`,
+            description: `This document's short descripton and trim it to 155 characters`,
             validation: Rule => Rule.warning('Should be under 155 characters'),
             options: {
                 source: doc => doc.descShort,

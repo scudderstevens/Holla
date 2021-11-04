@@ -1,4 +1,4 @@
-import { RiRadioButtonFill } from "react-icons/ri";
+import { RiApps2Fill } from "react-icons/ri";
 // import {isUniqueAcrossAllDocuments} from '../lib/isUniqueAcrossAllDocuments'
 // https://www.sanity.io/docs/slug-type#isUnique-3dd89e75a768
 
@@ -6,7 +6,7 @@ export default {
     name: 'category',
     title: 'Categories',
     type: 'document',
-    icon: RiRadioButtonFill,
+    icon: RiApps2Fill,
     fields: [
         {
             name: 'name',
@@ -44,18 +44,6 @@ export default {
             title: 'Open Graph',
             type: 'openGraph',
             description: `category Open Graph meta data; supplements document specific attributes such as Short Description.`,
-        },
-        {
-            name: 'components',
-            title: 'Component(s)',
-            description: `category landing page design components, displayed from top to bottom. drag and drop to change display order.`,
-            type: 'array',
-            of: [
-                { type: 'hdrBlock' },
-                { type: 'textBlock' },
-                //{ type: 'bannerImage' },
-                //{ type: 'cardDeck' },
-            ],
         }
     ],
     orderings: [

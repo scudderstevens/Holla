@@ -1,6 +1,14 @@
 # Sanity
 
+React Icons [list](https://react-icons.github.io/react-icons/icons?name=ri)
+
+
 ## query
+
+- **groq** queries,   [cheat sheet](https://www.sanity.io/docs/query-cheat-sheet)
+- **groq** operators, [docs](https://www.sanity.io/docs/groq-operators)
+- **groc** functions, [docs](https://www.sanity.io/docs/groq-functions)
+
 ```
 *[ _type=="route"]{
   'path': path.current,
@@ -25,3 +33,8 @@
    }
 }
 ```
+
+## Portable Text
+
+- Sanity, Block Content to HTML [docs](https://github.com/sanity-io/block-content-to-html)
+- Reference Materials [git](https://github.com/Universal-Health-Services/campaign-pages/blob/master/web/campaigns/utils/getActive.js)

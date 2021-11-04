@@ -1,41 +1,35 @@
+import asyncslugifier from '../../components/asyncSlugifier'
+
 export default {
-    title: 'Call to action',
+    title: 'Call-to-Action',
     name: 'cta',
     type: 'object',
-    fieldsets: [
-        {
-            name: 'link',
-            title: 'Link',
-            description: 'Only the first value of these will be used'
-        }
-    ],
     fields: [
+        {
+            name: 'target',
+            title: 'Target',
+            type: 'reference',
+            weak: true,
+            to: [ { type: 'page' } ]
+        },
         {
             name: 'name',
             title: 'Name',
-            type: 'string'
-        },
-        {
-            name: 'route',
-            title: 'Target Path',
-            type: 'reference',
-            weak: true,
-            to: [ {type: 'route'} ],
-            fieldset: 'link'
+            type: 'string',
+            description: 'Text used for menu item, button or link.',
         },
         {
             name: 'path',
             title: 'Path',
             type: 'string',
             description: 'local path without a route: /blog',
-            fieldset: 'link'
+            inputComponent: asyncslugifier
         },
         {
             name: 'link',
             title: 'External link',
             type: 'string',
             description: 'Example: https://www.sanity.io',
-            fieldset: 'link'
         },
         {
             name: 'kind',
@@ -43,7 +37,7 @@ export default {
             type: 'string',
             options: {
                 layout: 'radio',
-                list: ['button', 'link']
+                list: [ 'button', 'link' ]
             }
         }
     ],

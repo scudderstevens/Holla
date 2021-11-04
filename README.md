@@ -15,9 +15,9 @@ Holly N. Tyson
 
 - AMP [docs](https://nextjs.org/docs/advanced-features/amp-support/introduction)
 
-- Netlify CMS [tutorial](https://www.netlifycms.org/docs/nextjs/)
-
 **React** A JavaScript library for building user interfaces. [website](https://reactjs.org/)
+
+- React and TypeScript [tutorial](https://blog.alexdevero.com/react-and-typescript-pt1/)
 
 ***re*mark** is a Markdown processor powered by plugins part of the unified collective. [website](https://remark.js.org/)
 
@@ -44,17 +44,41 @@ Holly N. Tyson
 
 ## Development Notes
 
-**Vercel/Next.js** Blog Starter [git](https://github.com/vercel/next.js/tree/canary/examples/
+**Vercel/Next.js**
 
-to run locally
- 
-$ `npm run dev`
+to run locally:
+
+`% cd holla-tyson/site`
+
+`% yarn dev` Starts the development server.
 
 if another webpack instance is running on port 3000, change to 8000
 
 $ `npm run dev -- -p 8000`
 
+**Sanity**
+
+`% cd holla-tyson/studio`
+
+`% sanity start` Starts the development server.
+
+for production:
+
+see Deployment Notes
+
+## Deployment Notes
+
 ## Additional Resources
+
+**Vercel/Next**
+
+- TypeScript [docs](https://www.typescriptlang.org/)
+
+- Examples with TypeScript [git](https://github.com/vercel/next.js/tree/canary/examples/with-typescript)
+
+- Started with this **Blog Starter** [git](https://github.com/vercel/next.js/tree/canary/examples/cms-sanity) | [fix](https://github.com/sanity-io/sanity/issues/2508)
+
+- Blog Boiler Plate, additional reference material [git](https://github.com/ixartz/Next-js-Blog-Boilerplate) 
 
 **ARIA** (Accessible Rich Internet Applications) *MDN*, [website](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA)
 

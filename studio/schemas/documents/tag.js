@@ -44,18 +44,6 @@ export default {
             title: 'Open Graph',
             type: 'openGraph',
             description: `tag Open Graph meta data; supplements document specific attributes such as Short Description.`,
-        },
-        {
-            name: 'components',
-            title: 'Component(s)',
-            description: `tag landing page design components, displayed from top to bottom. drag and drop to change display order.`,
-            type: 'array',
-            of: [
-                { type: 'hdrBlock' },
-                { type: 'textBlock' },
-                //{ type: 'bannerImage' },
-                //{ type: 'cardDeck' },
-            ],
         }
     ],
     orderings: [

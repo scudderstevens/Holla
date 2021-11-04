@@ -7,23 +7,11 @@ export default {
     title: 'Authors',
     type: 'document',
     icon: RiAccountCircleFill,
-    fieldsets: [
-        {
-            name: 'authorPerson',
-            title: 'name',
-            description: `who is this author?`,
-            options: {
-                collapsible: false,
-                collapsed: false
-            }
-        }
-    ],
     fields: [
         {
             name: 'nameFirst',
             title: 'first',
             type: 'string',
-            fieldset: 'authorPerson',
             validation: Rule => Rule.error(`You have to define the provider's first name.`).required(),
         },
         {
@@ -31,13 +19,11 @@ export default {
             title: 'middle (optional)',
             type: 'string',
             description: `leave off any periods (.)`,
-            fieldset: 'authorPerson',
         },
         {
             name: 'nameLast',
             title: 'last',
             type: 'string',
-            fieldset: 'authorPerson',
             validation: Rule => Rule.error(`You have to define the provider's last name.`).required(),
         },
         {
@@ -46,7 +32,6 @@ export default {
             type: 'slug',
             description: `A URL friendly string, 95 characters or less.`,
             validation: Rule => Rule.required().error(`You have to define a unique slug shorter than 95 characters.`),
-            fieldset: 'authorPerson',
             options: {
                 source: doc => doc.nameMiddle? `${doc.nameFirst}-${doc.nameMiddle}-${doc.nameLast}`:`${doc.nameFirst}-${doc.nameLast}`,
                 maxLength: 95,
@@ -67,10 +52,9 @@ export default {
             of: [ {
                 type: 'reference',
                 weak: true,
-                to: { type: 'tag'},
+                to: { type: 'tag' },
             } ],
         },
-        // tag(s) free form, array of strings,
         {
             name: 'descShort',
             title: 'short description',
@@ -82,18 +66,6 @@ export default {
             title: 'Open Graph',
             type: 'openGraph',
             description: `author Open Graph meta data; supplements document specific attributes such as Short Description and Tags.`,
-        },
-        {
-            name: 'components',
-            title: 'Component(s)',
-            description: `author profile design components, displayed from top to bottom. drag and drop to change display order.`,
-            type: 'array',
-            of: [
-                { type: 'hdrBlock' },
-                { type: 'textBlock' },
-                //{ type: 'bannerImage' },
-                //{ type: 'cardDeck' },
-            ],
         }
     ],
     orderings: [

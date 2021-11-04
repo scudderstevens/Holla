@@ -1,10 +1,13 @@
-import sanityClient from '@sanity/client'
-import { RiGitPullRequestLine } from "react-icons/ri";
+import sanityClient from 'part:@sanity/base/client'
+import { RiGitPullRequestLine } from 'react-icons/ri'
+
 import category from './category';
 // import {isUniqueAcrossAllDocuments} from '../lib/isUniqueAcrossAllDocuments'
 // https://www.sanity.io/docs/slug-type#isUnique-3dd89e75a768
 
 // https://www.sanity.io/docs/studio-environment-variables
+const client = sanityClient.withConfig({ apiVersion: '2021-03-25' })
+/*
 const client = sanityClient({
     //projectId: process.env.SANITY_STUDIO_API_PROJECT_ID,
     //dataset: process.env.SANITY_STUDIO_API_DATASET,
@@ -14,6 +17,7 @@ const client = sanityClient({
     token: '', // or leave blank for unauthenticated usage
     useCdn: false, // `true` or `false` if you want to ensure fresh data
 })
+*/
 
 function myAsyncSlugifier(input) {
     const query = `*[ _id == "`+input._ref+`" ][0]{
@@ -27,7 +31,7 @@ function myAsyncSlugifier(input) {
         //console.log(`id: `+process.env.SANITY_STUDIO_API_PROJECT_ID)
         //console.log(`data: `+process.env.SANITY_STUDIO_API_DATASET)
         //console.log(`doc: `+JSON.stringify(doc))
-        if( doc.type == 'node' ){
+        if( doc.type == 'page' && doc.category ){
             //console.log(`if: `+JSON.stringify(doc.category.cslug))
             return `${ doc.category.cslug+'/'+doc.slug }`
         } else {
@@ -62,13 +66,7 @@ export default {
             type: 'reference',
             validation: (Rule) => Rule.required(),
             weak: true,
-            to: [ 
-                { type: 'node'     },
-                { type: 'category' },
-                { type: 'tag'      },
-                { type: 'author'   },
-            ],
-
+            to: [ { type: 'page' } ]
         },
         {
             name: 'path',
